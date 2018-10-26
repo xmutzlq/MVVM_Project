@@ -54,7 +54,7 @@ public class ApiConstants {
     public static final String UpdateHeadPic = URL_BASE + "user/headpic";
 
     //贴呗(正式线不需要PreFix)
-    private static final String T_PreFix = ""; //[api/]
+    private static final String T_PreFix = "api/"; //[api/]
     public static final String T_StartInfo = URL_BASE + T_PreFix + "index/startInfo";
     public static final String T_VersionInfo = URL_BASE + T_PreFix + "index/getVersionInfo";
 
