@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">贴现计算器</string>
+    <string name="title_compute">贴呗-贴现计算器</string>
+    <string name="title_home">首页</string>
+    <string name="title_news">新品</string>
+    <string name="title_discovery">发现</string>
+    <string name="title_personal">个人</string>
+
+    <string name="str_warmming_tip">温馨提示</string>
+    <string name="str_exit_tip">是否退出</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_comfirm">确定</string>
+</resources>

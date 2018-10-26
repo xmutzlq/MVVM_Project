@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/layout_compute_choice_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <com.bop.tiebei.widget.RectEditView
+            android:id="@+id/et_compute_input"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/size_5dp"
+            android:iconifiedByDefault="false"
+            android:background="@drawable/bg_round_rectangle_white"/>
+
+        <TextView
+            android:id="@+id/tv_compute_one_year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/size_5dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:enabled="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_13sp"
+            android:text="@string/t_str_one_year"
+            android:lines="1"
+            android:ellipsize="end"
+            android:background="@drawable/bg_round_rectangle_blue_btn"/>
+
+        <TextView
+            android:id="@+id/tv_compute_half_year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/size_5dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:enabled="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_13sp"
+            android:text="@string/t_str_half_year"
+            android:lines="1"
+            android:ellipsize="end"
+            android:background="@drawable/bg_round_rectangle_blue_btn"/>
+
+        <TextView
+            android:id="@+id/tv_compute_half_paper"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:enabled="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_13sp"
+            android:text="@string/t_str_half_paper"
+            android:lines="1"
+            android:ellipsize="end"
+            android:background="@drawable/bg_round_rectangle_blue_btn"/>
+    </LinearLayout>
+</merge>

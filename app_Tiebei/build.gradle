@@ -1,0 +1,140 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+def keystorePropertiesFile = rootProject.file("signing.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+//生成打包时间
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyy-MM-dd', TimeZone.getTimeZone("UTC"))
+    return formattedDate
+}
+
+//应用名称
+def getProductName() {
+    return "tiebei"
+}
+
+android {
+    signingConfigs {
+        myConfig {
+            keyAlias keystoreProperties['KEY_ALIAS']
+            keyPassword keystoreProperties['KEY_PASSWORD']
+            storeFile file(keystoreProperties['STORE_FILE'])
+            storePassword keystoreProperties['STORE_PASSWORD']
+        }
+    }
+
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+    defaultConfig {
+        applicationId "com.bop.tiebei"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE : "tiebei",
+                                UMENG_APP_KEY : "5b8397ab8f4a9d2ec7000016",
+                                JPUSH_APP_KEY : "a43f8784a03007ed25d674b7",
+                                JPUSH_CHANNEL_VALUE : "tiebei",
+                                BUGLY_APP_VERSION : defaultConfig.versionCode,
+                                BUGLY_APP_KEY : "2e90e9d549"]
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' , 'x86'//, 'armeabi-v7a', 'mips''x86_64', 'arm64-v8a'
+        }
+
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+        multiDexEnabled true
+        dexOptions {
+            preDexLibraries = false
+            javaMaxHeapSize "6g"
+        }
+    }
+    buildTypes {
+        debug{
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.myConfig
+        }
+        release {
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.myConfig
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    //打包选项
+    packagingOptions {
+        //去除的文件
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    //批量修改生成的apk文件名
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${getProductName()}_${defaultConfig.versionName}_${buildTime()}" + ".apk"
+        }
+    }
+
+    /*配置渠道*/
+    flavorDimensions "channel", "version"
+    productFlavors {
+        tiebei {dimension "channel"}
+        free {
+            dimension "version"
+        }
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    if (isModule.toBoolean()) {
+        implementation project(':lib_common')
+        implementation project(':lib_coremodel')
+    } else {
+        implementation project(':module_tiebei_compute')
+    }
+    annotationProcessor deps.arouter.compiler
+    annotationProcessor deps.glide.compiler
+}

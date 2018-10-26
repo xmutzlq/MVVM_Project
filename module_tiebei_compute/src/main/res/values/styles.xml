@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="t_button_style">
+        <item name="android:textSize">@dimen/size_30dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/bg_gradient_blue</item>
+        <item name="android:layout_marginRight">@dimen/size_8dp</item>
+        <item name="android:layout_marginBottom">@dimen/size_8dp</item>
+    </style>
+
+    <style name="digit_button_style" parent="t_button_style">
+        <item name="android:background">@drawable/bg_gradient_white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="clear_button_style" parent="t_button_style">
+        <item name="android:background">@drawable/bg_gradient_red</item>
+    </style>
+</resources>

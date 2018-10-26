@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/color_dddddd">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/size_8dp"
+                android:orientation="vertical"
+                android:background="@mipmap/ic_t_cal_display">
+                <EditText
+                    android:id="@+id/cal_display_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/size_8dp"
+                    android:paddingRight="@dimen/size_8dp"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:lines="1"
+                    android:textSize="@dimen/size_30dp"
+                    android:textColor="@color/color_282828"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"/>
+
+                <View style="@style/DeepUnderLine"
+                    android:layout_marginLeft="@dimen/size_8dp"
+                    android:layout_marginRight="@dimen/size_8dp"
+                    android:background="@color/color_666666"/>
+
+                <EditText
+                    android:id="@+id/cal_display_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/size_8dp"
+                    android:paddingRight="@dimen/size_8dp"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:lines="1"
+                    android:textSize="@dimen/size_30dp"
+                    android:textColor="@color/black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"/>
+
+                <View style="@style/DeepUnderLine"
+                    android:layout_marginLeft="@dimen/size_8dp"
+                    android:layout_marginRight="@dimen/size_8dp"
+                    android:background="@color/color_666666"/>
+
+                <EditText
+                    android:id="@+id/cal_display_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/size_8dp"
+                    android:paddingRight="@dimen/size_8dp"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number|numberDecimal"
+                    android:lines="1"
+                    android:textSize="@dimen/size_30dp"
+                    android:textColor="@color/black"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_62dp"
+                android:layout_marginLeft="@dimen/size_8dp"
+                android:orientation="horizontal">
+
+                <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                    android:id="@+id/clear"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/size_4dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="@string/clear"
+                    android:textSize="@dimen/size_28dp"
+                    style="@style/clear_button_style" />
+
+                <com.bop.tiebei.widget.raiflatbutton.RaiflatImageButton
+                    android:id="@+id/del"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/size_4dp"
+                    android:clickable="true"
+                    style="@style/clear_button_style"
+                    android:src="@mipmap/ic_t_del"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/layout_cal_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/size_8dp"
+            android:layout_marginBottom="@dimen/size_8dp"
+            layout="@layout/layout_cal_keyboard"/>
+    </LinearLayout>
+</layout>

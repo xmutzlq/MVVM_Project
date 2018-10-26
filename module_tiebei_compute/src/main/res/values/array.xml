@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="compute_left_label">
+        <item>票面金额(万元)：　</item>
+        <item>月利率(‰)：　　　</item>
+        <item>年利率(%)：　　　&#8201;</item>
+        <item>每十万手续费(元)：</item>
+        <item>贴现日期：　　　&#8201;&#8201;&#8201;</item>
+        <item>到期日期：　　　&#8201;&#8201;&#8201;</item>
+        <item>调整天数(天)：　　</item>
+    </string-array>
+
+    <string-array name="compute_right_label">
+        <item>输入票面金额</item>
+        <item>0.0000</item>
+        <item>0.00</item>
+        <item>0</item>
+        <item>0000-00-00</item>
+        <item>0001-00-00</item>
+        <item>0_c</item>
+    </string-array>
+
+    <string-array name="compute_left_bottom_lable">
+        <item>计息天数(天)：　　</item>
+        <item>每十万贴息(元)：　</item>
+        <item>贴现利息(元)：　　</item>
+        <item>贴现金额(元)：　　</item>
+    </string-array>
+
+    <string-array name="compute_right_bottom_label">
+        <item>0</item>
+        <item>0.00</item>
+        <item>0.00</item>
+        <item>0.00</item>
+    </string-array>
+</resources>

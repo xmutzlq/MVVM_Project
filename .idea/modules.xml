@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app_Tiebei/app_Tiebei.iml" filepath="$PROJECT_DIR$/app_Tiebei/app_Tiebei.iml" />
+      <module fileurl="file://D:\zlq\tools\trunk-master\trunk-master\app_Tiebei\app_specific.iml" filepath="D:\zlq\tools\trunk-master\trunk-master\app_Tiebei\app_specific.iml" />
+      <module fileurl="file://D:\workspace\tiebei\app\android\app_universal\app_universal.iml" filepath="D:\workspace\tiebei\app\android\app_universal\app_universal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_common_res/lib_common_res.iml" filepath="$PROJECT_DIR$/lib_common_res/lib_common_res.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_coremodel/lib_coremodel.iml" filepath="$PROJECT_DIR$/lib_coremodel/lib_coremodel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_opensource/lib_opensource.iml" filepath="$PROJECT_DIR$/lib_opensource/lib_opensource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_share/lib_share.iml" filepath="$PROJECT_DIR$/lib_share/lib_share.iml" />
+      <module fileurl="file://D:\workspace\tiebei\app\android\module_cart\module_cart.iml" filepath="D:\workspace\tiebei\app\android\module_cart\module_cart.iml" />
+      <module fileurl="file://D:\workspace\tiebei\app\android\module_category\module_category.iml" filepath="D:\workspace\tiebei\app\android\module_category\module_category.iml" />
+      <module fileurl="file://D:\workspace\tiebei\app\android\module_details\module_details.iml" filepath="D:\workspace\tiebei\app\android\module_details\module_details.iml" />
+      <module fileurl="file://D:\workspace\tiebei\app\android\module_home\module_home.iml" filepath="D:\workspace\tiebei\app\android\module_home\module_home.iml" />
+      <module fileurl="file://D:\workspace\tiebei\app\android\module_order\module_order.iml" filepath="D:\workspace\tiebei\app\android\module_order\module_order.iml" />
+      <module fileurl="file://D:\workspace\tiebei\app\android\module_personal\module_personal.iml" filepath="D:\workspace\tiebei\app\android\module_personal\module_personal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_tiebei_compute/module_tiebei_compute.iml" filepath="$PROJECT_DIR$/module_tiebei_compute/module_tiebei_compute.iml" />
+    </modules>
+  </component>
+</project>

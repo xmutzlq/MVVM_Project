@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/simplePad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit7"
+                android:text="@string/digit7"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit8"
+                android:text="@string/digit8"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit9"
+                android:text="@string/digit9"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/div"
+                android:text="@string/div"
+                style="@style/t_button_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit4"
+                android:text="@string/digit4"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit5"
+                android:text="@string/digit5"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit6"
+                android:text="@string/digit6"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/mul"
+                android:text="@string/mul"
+                style="@style/t_button_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit1"
+                android:text="@string/digit1"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit2"
+                android:text="@string/digit2"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit3"
+                android:text="@string/digit3"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/minus"
+                android:text="@string/minus"
+                style="@style/t_button_style" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/digit0"
+                android:text="@string/digit0"
+                android:tag="number"
+                android:onClick="onNumberItemClick"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/dot"
+                android:text="@string/dot"
+                style="@style/digit_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/equal"
+                android:text="@string/equal"
+                style="@style/clear_button_style" />
+            <com.bop.tiebei.widget.raiflatbutton.RaiflatButton
+                android:id="@+id/plus"
+                android:text="@string/plus"
+                style="@style/t_button_style" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

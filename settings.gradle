@@ -1,0 +1,7 @@
+include ':lib_common',
+        ':lib_coremodel',
+        ':app_Tiebei',
+        ':lib_opensource',
+        ':lib_share',
+        ':lib_common_res',
+        ':module_tiebei_compute'

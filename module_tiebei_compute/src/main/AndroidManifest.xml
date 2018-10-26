@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bop.tiebei">
+
+    <application>
+        <activity android:name="com.bop.tiebei.ActivityCompute"></activity>
+        <activity android:name="com.bop.tiebei.ActivityCalculator"></activity>
+    </application>
+
+</manifest>
