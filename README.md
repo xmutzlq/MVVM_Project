@@ -1,11 +1,10 @@
-# GoogleArchitectureDemo
+# MVVMDemo
 谷歌最新MVVM架构，基于dataBinding、lifecycle、retrofit2、rxjava2、okhttp、fresco。
 
-## 两个定制app的首页UI图:
-|app_universal                                |              app_specific              |
+## 定制app的首页UI图:
+|app_Tiebei                              |              app_                    |
 |    ----                                |                 -----                |
-|`Activity`组建为主,点击会跳转到不同组建库的`Activity`|     通过`ARoyter`获取不同组建库的`Fragment`来展示       |
- ![Alt text](./img/app_universal.png)  |  ![Alt text](./img/app_specific.png) |
+|`Activity`组建为主,点击会跳转到不同组建库的`Activity`|     通过`ARouter`获取不同组建库的`Fragment`来展示|
 
 # 一、MVVM架构优势
 [《两张图看懂Android开发中MVC与MVP的区别》](http://blog.csdn.net/u010072711/article/details/77132403) 前面两张图真是了MVC和MVP的区别，我这里也来一张图看看MVVM:
@@ -39,19 +38,17 @@
 
 ## 3.1 各模块和彼此之间的关系解释：
 
-- `lib_opensource` ：第三方build.gradle依赖，本项目主要有`support`、` lifecycle`、`room`、`fresco `、`retrofit`、`okhttp`、`RxJava`、`ARouter`这些。
+- `lib_opensource` ：主要是第三方build.gradle依赖。
 
-- `lib_coremodel`: 存放MVVM中的`Model`和`ViewModel`两个模块，就是数据的处理和数据与UI页面的绑定。依赖`lib_opensource`库。
+- `lib_coremodel`: retrofit+okhttp的数据处理封装。依赖`lib_opensource`库。
 
-- `lib_common` : 公共库，主要有各种`base`，各种ui组件，自定义组件，公用的`Activity`、公用的`Fragment`，和公用的`utils`等等。依赖`lib_coremodel`库。
+- `lib_common` : 公共库，主要有各种`base`，自定义组件，公用的`Activity`、公用的`Fragment`，和公用的`utils`等等。依赖`lib_coremodel`库。
 
-- `module_girls` : 妹子功能模块，可以在`library`和`application`之间切换，自己可以是一个`app`也可以成为别的`app的`一个组件模块。组件化编译时为app，反之为module。
+- `lib_common_res` : 主要存放公共资源，如图片、字体等等。
 
-- `module_news` : 新闻功能模块，可以在`library`和`application`之间切换，自己可以是一个`app`也可以成为别的`app`的一个组件模块。组件化编译时为app，反之为module。
+- `lib_share` : 将一些第三方jar包、so库、分享等等模块独立成一个模块。
 
-- `app_universal` : 定制版本的app，组件化编译时 `module_girls`和`module_news`为app，所以不能把这两个作为module加进来编译，所以组件化编译时`app_universal`要依赖`lib_common`库，反之就可以把 `module_girls`和`module_news`作为module加进来编译。
-
-- `app_specific` : 定制版本的app，组件化编译时 `module_girls`和`module_news`为app，所以不能把这两个作为module加进来编译，所以组件化编译时`app_specific`要依赖`lib_common`库，反之就可以把 `module_girls`和`module_news`作为module加进来编译。
+- `app_Tiebei` : 定制版本的app，组件化编译时 `module_tiebei_compute`为app，所以不能把这个作为module加进来编译，所以组件化编译时`app_Tiebei`要依赖`lib_common`库，反之就可以把 `module_tiebei_compute`作为module加进来编译。
 
 ## 3.2 ARouter串联各个模块
 使用`ARouter`来跳转`Activity`和获取`Fragment`，记得看之前别人的组件化结构文章，一直都在纠结`Fragment`的获取问题，我想说的是有了`ARouter`来获取`Fragment`不是超级简单么？
@@ -62,7 +59,6 @@
 - 拦截跳转过程，处理登陆、埋点等逻辑
 - 跨模块API调用，通过控制反转来做组件解耦
 
-
 ## 3.3 组件化编译和非组件化编译切换
 我们在工程根目录下的`gradle.properties`文件中加入一个`Boolean`类型的变量，通过修改这个变量来识别编译模式：
 ```xml
@@ -71,7 +67,7 @@
 isModule=false
 ```
 
-然后在 `module_girls`和`module_news`中的`build.gradle`文件中支持切换：
+然后在 `module_tiebei_compute`中的`build.gradle`文件中支持切换：
 ```xml
 if (isModule.toBoolean()) {
     //组件化编译时为application
